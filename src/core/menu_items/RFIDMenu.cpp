@@ -10,17 +10,17 @@
 
 void RFIDMenu::optionsMenu() {
     options = {
-        {"Read tag",    [=]()  { TagOMatic(); }},
-        {"Read 125kHz", [=]()  { RFID125(); }},
-        {"Scan tags",   [=]()  { TagOMatic(TagOMatic::SCAN_MODE); }},
-        {"Load file",   [=]()  { TagOMatic(TagOMatic::LOAD_MODE); }},
-        {"Erase data",  [=]()  { TagOMatic(TagOMatic::ERASE_MODE); }},
-        {"Write NDEF",  [=]()  { TagOMatic(TagOMatic::WRITE_NDEF_MODE); }},
+        {"Leer tag",    [=]()  { TagOMatic(); }},
+        {"Leer 125kHz", [=]()  { RFID125(); }},
+        {"Escanear tags",   [=]()  { TagOMatic(TagOMatic::SCAN_MODE); }},
+        {"Cargar Archivo",   [=]()  { TagOMatic(TagOMatic::LOAD_MODE); }},
+        {"Borrar Datyos",  [=]()  { TagOMatic(TagOMatic::ERASE_MODE); }},
+        {"Escribir NDEF",  [=]()  { TagOMatic(TagOMatic::WRITE_NDEF_MODE); }},
         {"Amiibolink",  [=]()  { Amiibo(); }},
         {"Chameleon",   [=]()  { Chameleon(); }},
         {"PN532 BLE",   [=]()  { Pn532ble(); }},
-        {"Config",      [=]()  { configMenu(); }},
-        {"Main Menu",   [=]()  { backToMenu(); }},
+        {"Configurar",      [=]()  { configMenu(); }},
+        {"Volver",   [=]()  { backToMenu(); }},
     };
 
     delay(200);
