@@ -8,7 +8,7 @@
 
 void GpsMenu::optionsMenu() {
     options = {
-        {"",  [=]() { Wardriving(); }},
+        {"WarDriving",  [=]() { Wardriving(); }},
         {"Rastreador GPS", [=]() { GPSTracker(); }},
         {"Configurar",      [=]() { configMenu(); }},
         {"Volver",   [=]() { backToMenu(); }}
