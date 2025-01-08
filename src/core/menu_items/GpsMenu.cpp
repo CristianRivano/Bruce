@@ -8,10 +8,10 @@
 
 void GpsMenu::optionsMenu() {
     options = {
-        {"Wardriving",  [=]() { Wardriving(); }},
-        {"GPS Tracker", [=]() { GPSTracker(); }},
-        {"Config",      [=]() { configMenu(); }},
-        {"Main Menu",   [=]() { backToMenu(); }}
+        {"",  [=]() { Wardriving(); }},
+        {"Rastreador GPS", [=]() { GPSTracker(); }},
+        {"Configurar",      [=]() { configMenu(); }},
+        {"Volver",   [=]() { backToMenu(); }}
     };
 
     delay(200);
@@ -21,12 +21,12 @@ void GpsMenu::optionsMenu() {
 
 void GpsMenu::configMenu() {
     options = {
-        {"Baudrate", [=]() { setGpsBaudrateMenu(); }},
-        {"Back",     [=]() { optionsMenu(); }},
+        {"Velocidad en baudios", [=]() { setGpsBaudrateMenu(); }},
+        {"Atrás",     [=]() { optionsMenu(); }},
     };
 
     delay(200);
-    loopOptions(options,false,true,"GPS Config");
+    loopOptions(options,false,true,"Configuración GPS");
 }
 
 void GpsMenu::drawIcon(float scale) {
