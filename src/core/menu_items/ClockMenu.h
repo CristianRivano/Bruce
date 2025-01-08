@@ -6,7 +6,7 @@
 
 class ClockMenu : public MenuItemInterface {
 public:
-    ClockMenu() : MenuItemInterface("Clock") {}
+    ClockMenu() : MenuItemInterface("Reloj") {}
 
     void optionsMenu(void);
     void drawIcon(float scale);
