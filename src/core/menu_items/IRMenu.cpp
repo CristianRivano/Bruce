@@ -9,10 +9,10 @@
 void IRMenu::optionsMenu() {
     options = {
         {"TV-B-Gone", [=]() { StartTvBGone(); }},
-        {"Custom IR", [=]() { otherIRcodes(); }},
-        {"IR Read",   [=]() { IrRead(); }},
-        {"Config",    [=]() { configMenu(); }},
-        {"Main Menu", [=]() { backToMenu(); }}
+        {"IR personalizado", [=]() { otherIRcodes(); }},
+        {"Leer IR",   [=]() { IrRead(); }},
+        {"Configurar",    [=]() { configMenu(); }},
+        {"Volver", [=]() { backToMenu(); }}
     };
 
     delay(200);
@@ -29,7 +29,7 @@ void IRMenu::configMenu() {
     };
 
     delay(200);
-    loopOptions(options,false,true,"IR Config");
+    loopOptions(options,false,true,"Configuración IR");
 }
 
 void IRMenu::drawIcon(float scale) {
