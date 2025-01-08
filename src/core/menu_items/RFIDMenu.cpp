@@ -14,7 +14,7 @@ void RFIDMenu::optionsMenu() {
         {"Leer 125kHz", [=]()  { RFID125(); }},
         {"Escanear tags",   [=]()  { TagOMatic(TagOMatic::SCAN_MODE); }},
         {"Cargar Archivo",   [=]()  { TagOMatic(TagOMatic::LOAD_MODE); }},
-        {"Borrar Datyos",  [=]()  { TagOMatic(TagOMatic::ERASE_MODE); }},
+        {"Borrar Datos",  [=]()  { TagOMatic(TagOMatic::ERASE_MODE); }},
         {"Escribir NDEF",  [=]()  { TagOMatic(TagOMatic::WRITE_NDEF_MODE); }},
         {"Amiibolink",  [=]()  { Amiibo(); }},
         {"Chameleon",   [=]()  { Chameleon(); }},
@@ -34,12 +34,12 @@ void RFIDMenu::optionsMenu() {
 
 void RFIDMenu::configMenu() {
     options = {
-        {"RFID Module",   [=]() { setRFIDModuleMenu(); }},
-        {"Back",          [=]() { optionsMenu(); }},
+        {"Módulo RFID",   [=]() { setRFIDModuleMenu(); }},
+        {"Volver",          [=]() { optionsMenu(); }},
     };
 
     delay(200);
-    loopOptions(options,false,true,"RFID Config");
+    loopOptions(options,false,true,"Configuración RFID");
 }
 
 void RFIDMenu::drawIcon(float scale) {
