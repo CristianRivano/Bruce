@@ -31,14 +31,14 @@
 void WifiMenu::optionsMenu() {
     if(!wifiConnected) {
         options = {
-            {"Connect Wifi", [=]()  { wifiConnectMenu(WIFI_STA); }},
+            {"Conectar Wifi", [=]()  { wifiConnectMenu(WIFI_STA); }},
             {"WiFi AP",      [=]()  { wifiConnectMenu(WIFI_AP); displayInfo("pwd: " + bruceConfig.wifiAp.pwd, true); }},
         };
     } else {
-        options = {{"Disconnect",   [=]()  { wifiDisconnect(); }} };
+        options = {{"Desconecta",   [=]()  { wifiDisconnect(); }} };
         if(WiFi.getMode() == WIFI_MODE_STA) options.push_back({"AP info",   [=]()  { displayAPInfo(); }});
     }
-    options.push_back({"Wifi Atks", [=]()     { wifi_atk_menu(); }});
+    options.push_back({"Ataque WiFi", [=]()     { wifi_atk_menu(); }});
     options.push_back({"Evil Portal", [=]()   { EvilPortal(); }});
     options.push_back({"ReverseShell", [=]()       { ReverseShell(); }});
     options.push_back({"Listen TCP", [=]()       { listenTcpPort(); }});
@@ -51,7 +51,7 @@ void WifiMenu::optionsMenu() {
     options.push_back({"Wireguard", [=]()     { wg_setup(); }});
     options.push_back({"Brucegotchi",  [=]()   { brucegotchi_start(); }});
 #endif
-    options.push_back({"Main Menu", [=]()     { backToMenu(); }});
+    options.push_back({"Volver", [=]()     { backToMenu(); }});
 
     delay(200);
     loopOptions(options,false,true,"WiFi");
