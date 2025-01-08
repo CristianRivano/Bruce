@@ -39,8 +39,8 @@ void nrf_jammer() {
       NRFradio.stopConstCarrier();//this will stop jamming without powering down nrf
         //NRFradio.powerDown(); power down without powering up on scanner
     } else { 
-        Serial.println("Fail Starting radio");
-        displayError("NRF24 not found");
+        Serial.println("Error al Iniciar la Radio");
+        displayError("NRF24 No Encontrado");
         delay(500);
     }
   #endif
