@@ -6,14 +6,14 @@
 
 void FileMenu::optionsMenu() {
     options = {
-        {"SD Card",      [=]() { loopSD(SD); }},
+        {"MicroSD",      [=]() { loopSD(SD); }},
         {"LittleFS",     [=]() { loopSD(LittleFS); }},
         {"WebUI",        [=]() { loopOptionsWebUi(); }},
-        {"Main Menu",    [=]() { backToMenu(); }},
+        {"Volver",    [=]() { backToMenu(); }},
     };
 
     delay(200);
-    loopOptions(options,false,true,"Files");
+    loopOptions(options,false,true,"Archivos");
 }
 
 void FileMenu::drawIcon(float scale) {
