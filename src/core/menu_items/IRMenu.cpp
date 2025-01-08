@@ -16,7 +16,7 @@ void IRMenu::optionsMenu() {
     };
 
     delay(200);
-    String txt = "Infrared";
+    String txt = "Infrarrojo";
     txt+=" Tx: " + String(bruceConfig.irTx) + " Rx: " + String(bruceConfig.irRx);
     loopOptions(options,false,true,txt);
 }
@@ -25,7 +25,7 @@ void IRMenu::configMenu() {
     options = {
         {"Ir TX Pin", [=]() { gsetIrTxPin(true); }},
         {"Ir RX Pin", [=]() { gsetIrRxPin(true); }},
-        {"Back",      [=]() { optionsMenu(); }},
+        {"Atrás",      [=]() { optionsMenu(); }},
     };
 
     delay(200);
