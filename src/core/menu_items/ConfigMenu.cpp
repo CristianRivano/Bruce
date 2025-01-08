@@ -7,16 +7,16 @@
 
 void ConfigMenu::optionsMenu() {
     options = {
-        {"Brightness",    [=]() { setBrightnessMenu(); }},
-        {"Dim Time",      [=]() { setDimmerTimeMenu(); }},
-        {"Orientation",   [=]() { gsetRotation(true); }},
-        {"UI Color",      [=]() { setUIColor(); }},
-        {"Sound On/Off",  [=]() { setSoundConfig(); }},
-        {"Startup WiFi",  [=]() { setWifiStartupConfig(); }},
-        {"Startup App",   [=]() { setStartupApp(); }},
-        {"Clock",         [=]() { setClock(); }},
-        {"Sleep",         [=]() { setSleepMode(); }},
-        {"Restart",       [=]() { ESP.restart(); }},
+        {"Brillo",    [=]() { setBrightnessMenu(); }},
+        {"Tiempo apagado",      [=]() { setDimmerTimeMenu(); }},
+        {"Orientación",   [=]() { gsetRotation(true); }},
+        {"Color",      [=]() { setUIColor(); }},
+        {"Sonido",  [=]() { setSoundConfig(); }},
+        {"Iniciar WiFi",  [=]() { setWifiStartupConfig(); }},
+        {"Iniciar App",   [=]() { setStartupApp(); }},
+        {"Reloj",         [=]() { setClock(); }},
+        {"Dormir",         [=]() { setSleepMode(); }},
+        {"Reiniciar",       [=]() { ESP.restart(); }},
     };
 
   #if defined(T_EMBED_1101)
@@ -24,10 +24,10 @@ void ConfigMenu::optionsMenu() {
   #endif
     if (bruceConfig.devMode) options.push_back({"Dev Mode", [=]() { devMenu(); }});
 
-    options.push_back({"Main Menu", [=]() { backToMenu(); }});
+    options.push_back({"Volver", [=]() { backToMenu(); }});
 
     delay(200);
-    loopOptions(options,false,true,"Config");
+    loopOptions(options,false,true,"Configurar");
 }
 
 void ConfigMenu::devMenu(){
@@ -35,7 +35,7 @@ void ConfigMenu::devMenu(){
         {"Device Info",   [=]() { showDeviceInfo(); }},
         {"MAC Address",   [=]() { checkMAC(); }},
         {"I2C Finder",    [=]() { find_i2c_addresses(); }},
-        {"Back",          [=]() { optionsMenu(); }},
+        {"Atrás",          [=]() { optionsMenu(); }},
     };
 
     delay(200);
