@@ -17,34 +17,34 @@
 
 void OthersMenu::optionsMenu() {
     options = {
-        {"SD Card",      [=]() { loopSD(SD); }},
+        {"MicroSD",      [=]() { loopSD(SD); }},
         {"LittleFS",     [=]() { loopSD(LittleFS); }},
         {"WebUI",        [=]() { loopOptionsWebUi(); }},
-        {"QRCodes",      [=]() { qrcode_menu(); }},
+        {"QR",      [=]() { qrcode_menu(); }},
         {"Megalodon",    [=]() { shark_setup(); }},
     #ifdef MIC_SPM1423
-        {"Mic Spectrum", [=]() { mic_test(); }},
+        {"Espectro de micrófono", [=]() { mic_test(); }},
     #endif
         {"BadUSB",       [=]() { usb_setup(); }},
     #ifdef HAS_KEYBOARD_HID
-        {"USB Keyboard", [=]() { usb_keyboard(); }},
+        {"Teclado USB", [=]() { usb_keyboard(); }},
     #endif
     #ifdef HAS_RGB_LED
-        {"LED Control",  [=]()  { ledColorConfig(); }},
-        {"LED Brightness", [=]() { ledBrightnessConfig(); }},
+        {"Control de LED",  [=]()  { ledColorConfig(); }},
+        {"Brillo del LED", [=]() { ledBrightnessConfig(); }},
     #endif
     #ifndef LITE_VERSION
         {"Openhaystack", [=]() { openhaystack_setup(); }},
     #endif
     #if !defined(ARDUINO_M5STACK_ARDUINO_M5STACK_CORE) && !defined(ARDUINO_M5STACK_ARDUINO_M5STACK_CORE2)
-        {"Interpreter", [=]()  { run_bjs_script(); }},
+        {"Intérprete", [=]()  { run_bjs_script(); }},
     #endif
         {"Timer",        [=]() { Timer(); }},
-        {"Main Menu",    [=]() { backToMenu(); }},
+        {"Volver",    [=]() { backToMenu(); }},
     };
 
     delay(200);
-    loopOptions(options,false,true,"Others");
+    loopOptions(options,false,true,"Otros");
 }
 
 void OthersMenu::drawIcon(float scale) {
