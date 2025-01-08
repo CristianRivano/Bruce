@@ -6,7 +6,7 @@
 
 class ScriptsMenu : public MenuItemInterface {
 public:
-    ScriptsMenu() : MenuItemInterface("JS Interpreter") {}
+    ScriptsMenu() : MenuItemInterface("Intérprete JAVA") {}
 
     void optionsMenu(void);
     void drawIcon(float scale);
