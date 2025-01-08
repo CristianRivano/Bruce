@@ -7,18 +7,18 @@
 
 void NRF24Menu::optionsMenu() {
     options.clear();
-    options.push_back({"Information",  [=]() { nrf_info(); }});
+    options.push_back({"Información",  [=]() { nrf_info(); }});
 
   #if CC1101_MOSI_PIN==TFT_MOSI
-    options.push_back({"Spectrum",     [=]() { nrf_spectrum(&tft.getSPIinstance()); }});
+    options.push_back({"Espectro",     [=]() { nrf_spectrum(&tft.getSPIinstance()); }});
   #elif CC1101_MOSI_PIN==SDCARD_MOSI
-    options.push_back({"Spectrum",     [=]() { nrf_spectrum(&sdcardSPI); }});
+    options.push_back({"Espectro",     [=]() { nrf_spectrum(&sdcardSPI); }});
   #else
-    options.push_back({"Spectrum",     [=]() { nrf_spectrum(&SPI); }});
+    options.push_back({"Espectro",     [=]() { nrf_spectrum(&SPI); }});
   #endif
     options.push_back({"Jammer 2.4G",  [=]() { nrf_jammer(); }});
 
-    options.push_back({"Main Menu",    [=]() { backToMenu(); }});
+    options.push_back({"Volver",    [=]() { backToMenu(); }});
     delay(200);
     loopOptions(options,false,true,"Bluetooth");
 }
