@@ -15,20 +15,20 @@ void nrf_jammer() {
     byte ptr_hop = 0;  // Pointer to the hopping array
     if(nrf_start())
     {
-        Serial.println("NRF24 turned On");
+        Serial.println("NRF24 Encendido");
         
         NRFradio.setPALevel(RF24_PA_MAX);
         NRFradio.startConstCarrier(RF24_PA_MAX, 45);
         NRFradio.setAddressWidth(3);//optional
         NRFradio.setPayloadSize(2);//optional
-        if(!NRFradio.setDataRate(RF24_2MBPS)) Serial.println("Fail setting data Rate");
+        if(!NRFradio.setDataRate(RF24_2MBPS)) Serial.println("Error al configurar la tasa de datos");
 
         drawMainBorder();
         tft.setCursor(10,28);
         tft.setTextSize(FM);
         tft.println("BLE Jammer:");
         tft.setCursor(10,tft.getCursorY()+8);
-        tft.println("Select to stop!");
+        tft.println("Seleccione para detener!");
         delay(200);
 
         while(!checkSelPress()) {
