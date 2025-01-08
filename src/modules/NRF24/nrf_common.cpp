@@ -12,10 +12,10 @@ void nrf_info() {
   tft.setTextColor(TFT_WHITE, bruceConfig.bgColor);
   tft.setTextSize(FP);
   tft.setCursor(15,33);
-  tft.println("These functions were made to be used in a controlled environment for STUDY only.");
-  tft.println("\nDO NOT use these functions to harm people or companies, you can go to jail!");
+  tft.println("Estas funciones fueron creadas para ser utilizadas en un entorno controlado únicamente para ESTUDIO..");
+  tft.println("\nNO uses estas funciones para dañar a personas o empresas, ¡puedes ir a la cárcel!");
   tft.setTextColor(bruceConfig.priColor, bruceConfig.bgColor);
-  tft.println("\nThis device is VERY sensible to noise, so long wires or passing near VCC line can make things go wrong.");
+  tft.println("\Este dispositivo es MUY sensible al ruido, por lo que los cables largos o que pasan cerca de la línea VCC pueden hacer que las cosas salgan mal..");
   delay(1000);
   while(!checkAnyKeyPress());
 }
