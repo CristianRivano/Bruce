@@ -86,8 +86,8 @@ void nrf_spectrum(SPIClass* SSPI) {
 
   }
   else {
-      Serial.println("Fail Starting radio");
-      displayError("NRF24 not found");
+      Serial.println("Fallo al Iniciar la Radio");
+      displayError("NRF24 No Encontrado");
       delay(500);
       return;
   }
