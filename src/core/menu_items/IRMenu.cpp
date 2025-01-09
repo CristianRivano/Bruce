@@ -25,7 +25,7 @@ void IRMenu::configMenu() {
     options = {
         {"Ir TX Pin", [=]() { gsetIrTxPin(true); }},
         {"Ir RX Pin", [=]() { gsetIrRxPin(true); }},
-        {"Atrás",      [=]() { optionsMenu(); }},
+        {"Atras",      [=]() { optionsMenu(); }},
     };
 
     delay(200);
