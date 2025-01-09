@@ -37,7 +37,7 @@ void OthersMenu::optionsMenu() {
         {"Openhaystack", [=]() { openhaystack_setup(); }},
     #endif
     #if !defined(ARDUINO_M5STACK_ARDUINO_M5STACK_CORE) && !defined(ARDUINO_M5STACK_ARDUINO_M5STACK_CORE2)
-        {"Intérprete", [=]()  { run_bjs_script(); }},
+        {"Interprete", [=]()  { run_bjs_script(); }},
     #endif
         {"Timer",        [=]() { Timer(); }},
         {"Volver",    [=]() { backToMenu(); }},
