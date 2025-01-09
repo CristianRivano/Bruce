@@ -23,7 +23,7 @@ void OthersMenu::optionsMenu() {
         {"QR",      [=]() { qrcode_menu(); }},
         {"Megalodon",    [=]() { shark_setup(); }},
     #ifdef MIC_SPM1423
-        {"Espectro de micrófono", [=]() { mic_test(); }},
+        {"Espectro de microfono", [=]() { mic_test(); }},
     #endif
         {"BadUSB",       [=]() { usb_setup(); }},
     #ifdef HAS_KEYBOARD_HID
