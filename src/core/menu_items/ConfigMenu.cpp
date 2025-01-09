@@ -9,7 +9,7 @@ void ConfigMenu::optionsMenu() {
     options = {
         {"Brillo",    [=]() { setBrightnessMenu(); }},
         {"Tiempo apagado",      [=]() { setDimmerTimeMenu(); }},
-        {"Orientación",   [=]() { gsetRotation(true); }},
+        {"Orientacion",   [=]() { gsetRotation(true); }},
         {"Color",      [=]() { setUIColor(); }},
         {"Sonido",  [=]() { setSoundConfig(); }},
         {"Iniciar WiFi",  [=]() { setWifiStartupConfig(); }},
@@ -32,10 +32,10 @@ void ConfigMenu::optionsMenu() {
 
 void ConfigMenu::devMenu(){
     options = {
-        {"Device Info",   [=]() { showDeviceInfo(); }},
-        {"MAC Address",   [=]() { checkMAC(); }},
-        {"I2C Finder",    [=]() { find_i2c_addresses(); }},
-        {"Atrás",          [=]() { optionsMenu(); }},
+        {"Informacion del dispositivo",   [=]() { showDeviceInfo(); }},
+        {"Direccion MAC",   [=]() { checkMAC(); }},
+        {"Buscador I2C",    [=]() { find_i2c_addresses(); }},
+        {"Atras",          [=]() { optionsMenu(); }},
     };
 
     delay(200);
