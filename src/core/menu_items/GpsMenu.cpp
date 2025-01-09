@@ -22,11 +22,11 @@ void GpsMenu::optionsMenu() {
 void GpsMenu::configMenu() {
     options = {
         {"Velocidad en baudios", [=]() { setGpsBaudrateMenu(); }},
-        {"Atrás",     [=]() { optionsMenu(); }},
+        {"Atras",     [=]() { optionsMenu(); }},
     };
 
     delay(200);
-    loopOptions(options,false,true,"Configuración GPS");
+    loopOptions(options,false,true,"Configuracion GPS");
 }
 
 void GpsMenu::drawIcon(float scale) {
