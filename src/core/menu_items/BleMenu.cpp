@@ -8,26 +8,26 @@
 
 void BleMenu::optionsMenu() {
     options.clear();
-   if(BLEConnected) options.push_back({"Desconecta",     [=]() {
+   if(BLEConnected) options.push_back({"Desconectar",     [=]() {
         BLEDevice::deinit();
         BLEConnected=false;
         if(Ask_for_restart==1) Ask_for_restart=2; // Sets the variable to ask for restart;
     }});
 
-        options.push_back({"Media Cmds",     [=]() { ble_MediaCommands(); }});
+        options.push_back({"Comandos BLE",     [=]() { ble_MediaCommands(); }});
     #if !defined(LITE_VERSION)
-        // options.push_back({"BLE Beacon",   [=]() { ble_test(); }});
+        // options.push_back({"Faro BLE",   [=]() { ble_test(); }});
         options.push_back({"Escanear",     [=]() { ble_scan(); }});
         options.push_back({"Bad BLE",      [=]() { ble_setup(); }});
     #endif
     #if defined(HAS_KEYBOARD_HID)
         options.push_back({"Teclado BLE", [=]() { ble_keyboard(); }});
     #endif
-    options.push_back({"iOS Spam",     [=]() { aj_adv(0); }});
-    options.push_back({"Windows Spam", [=]() { aj_adv(1); }});
-    options.push_back({"Samsung Spam", [=]() { aj_adv(2); }});
-    options.push_back({"Android Spam", [=]() { aj_adv(3); }});
-    options.push_back({"Spam All",     [=]() { aj_adv(4); }});
+    options.push_back({"Spam iOS",     [=]() { aj_adv(0); }});
+    options.push_back({"Spam Windows", [=]() { aj_adv(1); }});
+    options.push_back({"Spam Samsung", [=]() { aj_adv(2); }});
+    options.push_back({"Spam Android", [=]() { aj_adv(3); }});
+    options.push_back({"Spamear Todos",     [=]() { aj_adv(4); }});
     options.push_back({"Volver",    [=]() { backToMenu(); }});
     delay(200);
     loopOptions(options,false,true,"Bluetooth");
