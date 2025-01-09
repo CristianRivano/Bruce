@@ -29,7 +29,7 @@ void IRMenu::configMenu() {
     };
 
     delay(200);
-    loopOptions(options,false,true,"Configuración IR");
+    loopOptions(options,false,true,"Configuracion IR");
 }
 
 void IRMenu::drawIcon(float scale) {
