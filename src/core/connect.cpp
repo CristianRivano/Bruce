@@ -239,10 +239,10 @@ void DeviceConnection::createFilename(FS *fs, DeviceConnection::FileMessage file
     String filename = fileMessage.filename.substring(0,fileMessage.filename.lastIndexOf("."));
     String ext = fileMessage.filename.substring(fileMessage.filename.lastIndexOf("."));
 
-    Serial.println("Creating file");
-    Serial.print("Path: ");Serial.println(fileMessage.filepath);
-    Serial.print("Name: ");Serial.println(filename);
-    Serial.print("Ext: ");Serial.println(ext);
+    Serial.println("Crear Archivo");
+    Serial.print("Ruta: ");Serial.println(fileMessage.filepath);
+    Serial.print("Nombre: ");Serial.println(filename);
+    Serial.print("Extension: ");Serial.println(ext);
 
     if (!(*fs).exists(fileMessage.filepath)) (*fs).mkdir(fileMessage.filepath);
     if ((*fs).exists(fileMessage.filepath+"/"+filename+ext)) {
@@ -285,7 +285,7 @@ std::string macToString(const uint8_t* mac) {
 
 void sendPing() {
     peerOptions = {
-        {"Broadcast", [=]() { memcpy(dstAddress, broadcastAddress, 6); }},
+        {"Transmisión", [=]() { memcpy(dstAddress, broadcastAddress, 6); }},
     };
 
     DeviceConnection::FileMessage message;
@@ -293,7 +293,7 @@ void sendPing() {
 
     esp_err_t response = esp_now_send(broadcastAddress, (uint8_t*)&message, sizeof(message));
     if (response != ESP_OK) {
-        Serial.printf("Send ping response: %s\n", esp_err_to_name(response));
+        Serial.printf("Envio PING respuesta: %s\n", esp_err_to_name(response));
     }
 
     delay(500);
@@ -308,7 +308,7 @@ void sendPong(const uint8_t* mac) {
 
     esp_err_t response = esp_now_send(mac, (uint8_t*)&message, sizeof(message));
     if (response != ESP_OK) {
-        Serial.printf("Send pong response: %s\n", esp_err_to_name(response));
+        Serial.printf("Envio PONG Respuesta: %s\n", esp_err_to_name(response));
     }
 }
 
@@ -316,10 +316,10 @@ void sendPong(const uint8_t* mac) {
 void onDataSent(const uint8_t* mac_addr, esp_now_send_status_t status) {
     if (status == ESP_NOW_SEND_SUCCESS) {
         espnowSendStatus = DeviceConnection::SUCCESS;
-        Serial.println("ESPNOW send success");
+        Serial.println("ESPNOW Envio Exitoso");
     } else {
         espnowSendStatus = DeviceConnection::FAILED;
-        Serial.println("ESPNOW send fail");
+        Serial.println("ESPNOW Envio Fallido");
     }
 }
 
@@ -331,17 +331,17 @@ void onDataRecv(const uint8_t* mac, const uint8_t* incomingData, int len) {
     if (recvFileMessage.ping) return sendPong(mac);
     if (recvFileMessage.pong) return appendPeerToList(mac);
 
-    Serial.print("Name: ");
+    Serial.print("Nombre: ");
     Serial.println(recvFileMessage.filename);
-    Serial.print("Path: ");
+    Serial.print("Ruta: ");
     Serial.println(recvFileMessage.filepath);
-    Serial.print("Bytes sent: ");
+    Serial.print("Bytes enviados: ");
     Serial.println(recvFileMessage.bytesSent);
     Serial.print("Total bytes: ");
     Serial.println(recvFileMessage.totalBytes);
-    Serial.print("Done: ");
+    Serial.print("Listo: ");
     Serial.println(recvFileMessage.done);
-    // Serial.println("Data: ");
+    // Serial.println("Datos: ");
     // Serial.write((const uint8_t*)recvFileMessage.data, recvFileMessage.dataSize);
     Serial.println("\n-----");
 
