@@ -34,12 +34,12 @@ void RFIDMenu::optionsMenu() {
 
 void RFIDMenu::configMenu() {
     options = {
-        {"Módulo RFID",   [=]() { setRFIDModuleMenu(); }},
+        {"Modulo RFID",   [=]() { setRFIDModuleMenu(); }},
         {"Volver",          [=]() { optionsMenu(); }},
     };
 
     delay(200);
-    loopOptions(options,false,true,"Configuración RFID");
+    loopOptions(options,false,true,"Configuracion RFID");
 }
 
 void RFIDMenu::drawIcon(float scale) {
