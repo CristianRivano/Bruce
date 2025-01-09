@@ -7,17 +7,17 @@ void FMMenu::optionsMenu() {
     options = {
 //    #if !defined(LITE_VERSION) and defined(FM_SI4713)
       #if defined(FM_SI4713)
-        {"Brdcast std",   [=]() { fm_live_run(false); }},
-        {"Brdcast rsvd",  [=]() { fm_live_run(true); }},
-        {"Brdcast stop",  [=]() { fm_stop(); }},
-        {"FM Spectrum",   [=]() { fm_spectrum(); }},
-        {"Hijack TA",     [=]() { fm_ta_run(); }},
+        {"Transmision por Radio std",   [=]() { fm_live_run(false); }},
+        {"Transmision por Radio rsvd",  [=]() { fm_live_run(true); }},
+        {"Detener Transmision por Radio",  [=]() { fm_stop(); }},
+        {"Espectro FM",   [=]() { fm_spectrum(); }},
+        {"Secuestrar Transmision",     [=]() { fm_ta_run(); }},
     #endif
-        {"Main Menu",     [=]() { backToMenu(); }}
+        {"Volver",     [=]() { backToMenu(); }}
     };
 
     delay(200);
-    loopOptions(options,false,true,"FM");
+    loopOptions(options,false,true,"Radio FM");
 }
 
 void FMMenu::drawIcon(float scale) {
